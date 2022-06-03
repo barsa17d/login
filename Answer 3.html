@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    <h1>برسا دادبین</h1>
+    <p>User Name : test<br>Password : 1234</p>
+    <div align='center'>
+        <img src="img/open.jpg" style="width: 100px;" id="img_m" alt=""><br>
+            <table>
+                <tr>
+                    <td>
+                        <label for="">User Name:</label>
+                    </td>
+                    <td>
+                        <input id="user" type="text" style="margin-bottom: 5px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">password:</label>
+                    </td>
+                    <td>
+                        <input id='password_id' type="password">
+                    </td>
+                    <td>        
+                        <a onclick="show()" ><img  src="img/eye.jpg"  style="width:18px;margin-top: 1px;" alt=""></a></td>
+                </tr>
+            </table>
+        <br><hr width="300px" color="aqua">
+        <button onclick='send()' style="width: 200px;background-color: turquoise;height: 30px;border-color:aquamarine;color:white;">send</button>
+    </div>
+    <script>
+        var user_name='test'
+        var password_='1234'
+        function show() 
+        { 
+            var num = document.getElementById("password_id");  
+            if (num.type === "password") 
+            { 
+                document.getElementById('img_m').src='img/close.jpg'
+                num.type = "text"; 
+            } 
+            else 
+            { 
+                num.type = "password";  
+                document.getElementById('img_m').src='img/open.jpg'
+            } 
+        } 
+        function send()
+        {
+            var user=document.getElementById('user').value
+            var pass=document.getElementById('password_id').value
+            user==""||pass==""?alert('خالی است'):user==user_name&&pass==password_?alert('درست است'):alert('غلط می باشد')
+
+        }
+
+    </script>
+</body>
+</html>
